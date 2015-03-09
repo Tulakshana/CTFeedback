@@ -30,7 +30,7 @@ static NSString *CTFeedbackTopicsViewControllerCellIdentifier = @"Cell";
 {
     [super viewDidLoad];
 
-    self.title = CTFBLocalizedString(@"Topics");
+//    self.title = CTFBLocalizedString(@"Topics");
 
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:CTFeedbackTopicsViewControllerCellIdentifier];
 }
