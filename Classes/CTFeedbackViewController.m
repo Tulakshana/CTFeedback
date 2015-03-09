@@ -96,7 +96,7 @@ typedef NS_ENUM(NSInteger, CTFeedbackSection){
 
     self.cellItems = @[self.inputCellItems, self.additionCellItems ,self.deviceInfoCellItems, self.appInfoCellItems];
 
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:CTFBLocalizedString(@"Mail") style:UIBarButtonItemStylePlain target:self action:@selector(sendButtonTapped:)];
+//    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:CTFBLocalizedString(@"Mail") style:UIBarButtonItemStylePlain target:self action:@selector(sendButtonTapped:)];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -395,16 +395,27 @@ static NSString * const ATTACHMENT_FILENAME = @"screenshot.jpg";
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
 //    return 3;
-    return [self.cellItems count];
+    return [self.cellItems count] + 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    if (section == [self.cellItems count]) {
+        return 1;
+    }
     return [self.cellItems[(NSUInteger)section] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if (indexPath.section == [self.cellItems count]) {
+        UITableViewCell *mailCell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+        mailCell.textLabel.text = CTFBLocalizedString(@"Send Feedback");
+        mailCell.textLabel.textAlignment = NSTextAlignmentCenter;
+        mailCell.textLabel.font = [UIFont boldSystemFontOfSize:17.0];
+        return mailCell;
+    }
+    
     CTFeedbackCellItem *cellItem = self.cellItems[(NSUInteger)indexPath.section][(NSUInteger)indexPath.row];
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[[cellItem class] reuseIdentifier] forIndexPath:indexPath];
 
@@ -433,14 +444,22 @@ static NSString * const ATTACHMENT_FILENAME = @"screenshot.jpg";
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if (indexPath.section == [self.cellItems count]) {
+        return 45.0;
+    }
     CTFeedbackCellItem *cellItem = self.cellItems[(NSUInteger)indexPath.section][(NSUInteger)indexPath.row];
     return cellItem.cellHeight;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    CTFeedbackCellItem *cellItem = self.cellItems[(NSUInteger)indexPath.section][(NSUInteger)indexPath.row];
-    if (cellItem.action) cellItem.action(self);
+    if (indexPath.section == [self.cellItems count]) {
+        [self sendButtonTapped:nil];
+        
+    }else {
+        CTFeedbackCellItem *cellItem = self.cellItems[(NSUInteger)indexPath.section][(NSUInteger)indexPath.row];
+        if (cellItem.action) cellItem.action(self);
+    }
 
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
