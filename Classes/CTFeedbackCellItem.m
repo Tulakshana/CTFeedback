@@ -38,6 +38,11 @@
     cell.detailTextLabel.text = nil;
     cell.accessoryType = UITableViewCellAccessoryNone;
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
+    if (self.font) {
+        cell.textLabel.font = self.font;
+        cell.detailTextLabel.font = self.font;
+    }
 }
 
 @end
@@ -82,7 +87,7 @@
         self.textView.text = self.content;
         self.textView.delegate = self;
         self.textView.scrollEnabled = NO;
-        self.textView.font = [UIFont systemFontOfSize:14];
+        
         self.textView.backgroundColor = [UIColor clearColor];
     }
     return self;

@@ -18,6 +18,8 @@ NSString *const CTFeedbackCellIdentifierTopic=@"CTFeedbackCellIdentifierTopic";
     self = [super initWithStyle:[NSClassFromString(reuseIdentifier) cellStyle] reuseIdentifier:reuseIdentifier];
     if (self) {
         // Initialization code
+        
+        
     }
     return self;
 }

@@ -13,6 +13,7 @@
 
 @property (nonatomic, readonly) CGFloat cellHeight;
 @property (nonatomic, copy) void (^action)(id sender);
+@property (nonatomic, strong)UIFont *font;
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 

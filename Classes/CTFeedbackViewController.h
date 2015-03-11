@@ -58,5 +58,6 @@
 @protocol CTFeedbackViewControllerDelegate <NSObject>
 @optional
 - (void)feedbackViewController:(CTFeedbackViewController *)controller didFinishWithMailComposeResult:(MFMailComposeResult)result error:(NSError *)error;
+- (UIFont *)feedbackViewControllerFont:(CTFeedbackViewController *)controller;
 
 @end

@@ -97,6 +97,8 @@ typedef NS_ENUM(NSInteger, CTFeedbackSection){
     self.cellItems = @[self.inputCellItems, self.additionCellItems ,self.deviceInfoCellItems, self.appInfoCellItems];
 
 //    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:CTFBLocalizedString(@"Mail") style:UIBarButtonItemStylePlain target:self action:@selector(sendButtonTapped:)];
+    
+
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -135,6 +137,8 @@ typedef NS_ENUM(NSInteger, CTFeedbackSection){
 }
 
 #pragma mark -
+
+
 
 - (void)cancelButtonTapped:(id)sender
 {
@@ -175,6 +179,10 @@ typedef NS_ENUM(NSInteger, CTFeedbackSection){
         CTFeedbackTopicsViewController *topicsViewController = [[CTFeedbackTopicsViewController alloc] initWithStyle:UITableViewStyleGrouped];
         topicsViewController.topics = sender.topics;
         topicsViewController.localizedTopics = sender.localizedTopics;
+        if ([weakSelf.delegate respondsToSelector:@selector(feedbackViewControllerFont:)]) {
+            topicsViewController.font = [weakSelf.delegate feedbackViewControllerFont:weakSelf];
+            
+        }
         topicsViewController.action = ^(NSString *selectedTopic) {
             weakSelf.selectedTopic = selectedTopic;
             NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:CTFeedbackSectionInput];
@@ -188,6 +196,10 @@ typedef NS_ENUM(NSInteger, CTFeedbackSection){
     [result addObject:self.topicCellItem];
 
     self.contentCellItem = [CTFeedbackContentCellItem new];
+    if ([weakSelf.delegate respondsToSelector:@selector(feedbackViewControllerFont:)]) {
+        self.contentCellItem.textView.font = [weakSelf.delegate feedbackViewControllerFont:weakSelf];
+        
+    }
     [self.contentCellItem addObserver:self forKeyPath:@"cellHeight" options:NSKeyValueObservingOptionNew context:nil];
     [result addObject:self.contentCellItem];
 
@@ -412,13 +424,23 @@ static NSString * const ATTACHMENT_FILENAME = @"screenshot.jpg";
         UITableViewCell *mailCell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
         mailCell.textLabel.text = CTFBLocalizedString(@"Send Feedback");
         mailCell.textLabel.textAlignment = NSTextAlignmentCenter;
-        mailCell.textLabel.font = [UIFont boldSystemFontOfSize:17.0];
+        if ([self.delegate respondsToSelector:@selector(feedbackViewControllerFont:)]) {
+            mailCell.textLabel.font = [self.delegate feedbackViewControllerFont:self];
+            
+        }else {
+             mailCell.textLabel.font = [UIFont boldSystemFontOfSize:17.0];
+        }
+       
         return mailCell;
     }
     
     CTFeedbackCellItem *cellItem = self.cellItems[(NSUInteger)indexPath.section][(NSUInteger)indexPath.row];
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[[cellItem class] reuseIdentifier] forIndexPath:indexPath];
 
+    if ([self.delegate respondsToSelector:@selector(feedbackViewControllerFont:)]) {
+        cellItem.font = [self.delegate feedbackViewControllerFont:self];
+        
+    }
     [cellItem configureCell:cell atIndexPath:indexPath];
 
     return cell;

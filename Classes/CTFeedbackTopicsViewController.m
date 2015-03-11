@@ -45,6 +45,9 @@ static NSString *CTFeedbackTopicsViewControllerCellIdentifier = @"Cell";
 {
     NSString *topic = self.localizedTopics[(NSUInteger)indexPath.row];
     cell.textLabel.text = topic;
+    if (self.font) {
+        cell.textLabel.font = self.font;
+    }
 }
 
 #pragma mark - Table view data source

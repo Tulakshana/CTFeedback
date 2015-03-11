@@ -9,7 +9,7 @@
 #import "CTViewController.h"
 #import "CTFeedbackViewController.h"
 
-@interface CTViewController ()
+@interface CTViewController ()<CTFeedbackViewControllerDelegate>
 
 @end
 
@@ -31,6 +31,7 @@
 {
     CTFeedbackViewController *feedbackViewController = [CTFeedbackViewController controllerWithTopics:CTFeedbackViewController.defaultTopics localizedTopics:CTFeedbackViewController.defaultLocalizedTopics];
     feedbackViewController.toRecipients = @[@"ctfeedback@example.com"];
+    feedbackViewController.delegate = self;
     [self.navigationController pushViewController:feedbackViewController animated:YES];
 }
 
@@ -40,6 +41,12 @@
     feedbackViewController.toRecipients = @[@"ctfeedback@example.com"];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:feedbackViewController];
     [self presentViewController:navigationController animated:YES completion:nil];
+}
+
+#pragma mark - CTFeedbackViewControllerDelegate
+
+- (UIFont *)feedbackViewControllerFont:(CTFeedbackViewController *)controller{
+    return [UIFont systemFontOfSize:17.0];
 }
 
 @end

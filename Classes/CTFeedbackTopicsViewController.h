@@ -13,4 +13,5 @@
 @property (nonatomic, strong) NSArray *topics;
 @property (nonatomic, strong) NSArray *localizedTopics;
 @property (nonatomic, copy) void (^action)(NSString *);
+@property (nonatomic, strong) UIFont *font;
 @end
