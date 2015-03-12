@@ -94,7 +94,7 @@ typedef NS_ENUM(NSInteger, CTFeedbackSection){
     [self.tableView registerClass:[CTFeedbackCell class] forCellReuseIdentifier:[CTFeedbackInfoCellItem reuseIdentifier]];
     [self.tableView registerClass:[CTFeedbackCell class] forCellReuseIdentifier:[CTFeedbackAdditionInfoCellItem reuseIdentifier]];
 
-    self.cellItems = @[self.inputCellItems, self.additionCellItems ,self.deviceInfoCellItems, self.appInfoCellItems];
+    self.cellItems = @[self.inputCellItems, self.additionCellItems /*,self.deviceInfoCellItems, self.appInfoCellItems*/];
 
 //    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:CTFBLocalizedString(@"Mail") style:UIBarButtonItemStylePlain target:self action:@selector(sendButtonTapped:)];
     
@@ -446,21 +446,21 @@ static NSString * const ATTACHMENT_FILENAME = @"screenshot.jpg";
     return cell;
 }
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
-{
-    switch (section) {
-        case CTFeedbackSectionInput:
-            return nil;
-        case CTFeedbackSectionScreenshot:
-            return CTFBLocalizedString(@"Additional Info");
-        case CTFeedbackSectionDeviceInfo:
-            return CTFBLocalizedString(@"Device Info");
-        case CTFeedbackSectionAppInfo:
-            return CTFBLocalizedString(@"App Info");
-        default:
-            return nil;
-    }
-}
+//- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+//{
+//    switch (section) {
+//        case CTFeedbackSectionInput:
+//            return nil;
+//        case CTFeedbackSectionScreenshot:
+//            return CTFBLocalizedString(@"Additional Info");
+//        case CTFeedbackSectionDeviceInfo:
+//            return CTFBLocalizedString(@"Device Info");
+//        case CTFeedbackSectionAppInfo:
+//            return CTFBLocalizedString(@"App Info");
+//        default:
+//            return nil;
+//    }
+//}
 
 #pragma mark - Table view delegate
 
