@@ -430,7 +430,12 @@ static NSString * const ATTACHMENT_FILENAME = @"screenshot.jpg";
         }else {
              mailCell.textLabel.font = [UIFont boldSystemFontOfSize:17.0];
         }
-       
+        if ([self.delegate respondsToSelector:@selector(feedbackViewControllerSubmitButtonColor:)]) {
+            mailCell.backgroundColor = [self.delegate feedbackViewControllerSubmitButtonColor:self];
+        }
+        if ([self.delegate respondsToSelector:@selector(feedbackViewControllerSubmitButtonTextColor:)]) {
+            mailCell.textLabel.textColor = [self.delegate feedbackViewControllerSubmitButtonTextColor:self];
+        }
         return mailCell;
     }
     

@@ -59,5 +59,6 @@
 @optional
 - (void)feedbackViewController:(CTFeedbackViewController *)controller didFinishWithMailComposeResult:(MFMailComposeResult)result error:(NSError *)error;
 - (UIFont *)feedbackViewControllerFont:(CTFeedbackViewController *)controller;
-
+- (UIColor *)feedbackViewControllerSubmitButtonColor:(CTFeedbackViewController *)controller;
+- (UIColor *)feedbackViewControllerSubmitButtonTextColor:(CTFeedbackViewController *)controller;
 @end

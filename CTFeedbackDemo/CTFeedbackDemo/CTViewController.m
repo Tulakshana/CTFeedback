@@ -49,4 +49,10 @@
     return [UIFont systemFontOfSize:17.0];
 }
 
+- (UIColor *)feedbackViewControllerSubmitButtonColor:(CTFeedbackViewController *)controller{
+    return [UIColor redColor];
+}
+- (UIColor *)feedbackViewControllerSubmitButtonTextColor:(CTFeedbackViewController *)controller{
+    return [UIColor whiteColor];
+}
 @end
