@@ -80,6 +80,8 @@ typedef NS_ENUM(NSInteger, CTFeedbackSection){
         self.topics = topics;
         self.localizedTopics = localizedTopics;
         self.useHTML = NO;
+        self.tableView.backgroundColor = [UIColor clearColor];
+        self.tableView.separatorColor = [UIColor clearColor];
     }
     return self;
 }

@@ -25,8 +25,7 @@
     feedbackViewController.title = @"";
     feedbackViewController.delegate = self;
     feedbackViewController.view.frame = CGRectMake(10, 0, [[UIScreen mainScreen] bounds].size.width - 20, [[UIScreen mainScreen] bounds].size.height);
-    feedbackViewController.tableView.backgroundColor = [UIColor clearColor];
-    feedbackViewController.tableView.separatorColor = [UIColor clearColor];
+
     [self addChildViewController:feedbackViewController];
     [self.view addSubview:feedbackViewController.view];
     
