@@ -43,6 +43,15 @@
         cell.textLabel.font = self.font;
         cell.detailTextLabel.font = self.font;
     }
+    if (self.textColor) {
+        cell.textLabel.textColor = self.textColor;
+        cell.detailTextLabel.textColor = self.textColor;
+    }
+    if (self.backgroundColor) {
+        cell.backgroundColor = self.backgroundColor;
+    }
+    
+    cell.layer.cornerRadius = 6.0;
 }
 
 @end

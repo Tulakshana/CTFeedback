@@ -28,6 +28,7 @@ typedef NS_ENUM(NSInteger, CTFeedbackSection){
 @property (nonatomic, strong) NSArray *cellItems;
 
 @property (nonatomic, readonly) NSArray *inputCellItems;
+@property (nonatomic, readonly) NSArray *commentItems;
 @property (nonatomic, readonly) NSArray *deviceInfoCellItems;
 @property (nonatomic, readonly) NSArray *appInfoCellItems;
 @property (nonatomic, readonly) NSArray *additionCellItems;
@@ -94,7 +95,7 @@ typedef NS_ENUM(NSInteger, CTFeedbackSection){
     [self.tableView registerClass:[CTFeedbackCell class] forCellReuseIdentifier:[CTFeedbackInfoCellItem reuseIdentifier]];
     [self.tableView registerClass:[CTFeedbackCell class] forCellReuseIdentifier:[CTFeedbackAdditionInfoCellItem reuseIdentifier]];
 
-    self.cellItems = @[self.inputCellItems, self.additionCellItems /*,self.deviceInfoCellItems, self.appInfoCellItems*/];
+    self.cellItems = @[self.inputCellItems,self.commentItems, self.additionCellItems /*,self.deviceInfoCellItems, self.appInfoCellItems*/];
 
 //    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:CTFBLocalizedString(@"Mail") style:UIBarButtonItemStylePlain target:self action:@selector(sendButtonTapped:)];
     
@@ -195,14 +196,28 @@ typedef NS_ENUM(NSInteger, CTFeedbackSection){
     };
     [result addObject:self.topicCellItem];
 
+//    self.contentCellItem = [CTFeedbackContentCellItem new];
+//    if ([weakSelf.delegate respondsToSelector:@selector(feedbackViewControllerFont:)]) {
+//        self.contentCellItem.textView.font = [weakSelf.delegate feedbackViewControllerFont:weakSelf];
+//        
+//    }
+//    [self.contentCellItem addObserver:self forKeyPath:@"cellHeight" options:NSKeyValueObservingOptionNew context:nil];
+//    [result addObject:self.contentCellItem];
+
+    return result.copy;
+}
+
+- (NSArray *)commentItems{
+    NSMutableArray *result = [NSMutableArray array];
+    
     self.contentCellItem = [CTFeedbackContentCellItem new];
-    if ([weakSelf.delegate respondsToSelector:@selector(feedbackViewControllerFont:)]) {
-        self.contentCellItem.textView.font = [weakSelf.delegate feedbackViewControllerFont:weakSelf];
+    if ([self.delegate respondsToSelector:@selector(feedbackViewControllerFont:)]) {
+        self.contentCellItem.textView.font = [self.delegate feedbackViewControllerFont:self];
         
     }
     [self.contentCellItem addObserver:self forKeyPath:@"cellHeight" options:NSKeyValueObservingOptionNew context:nil];
     [result addObject:self.contentCellItem];
-
+    
     return result.copy;
 }
 
@@ -436,6 +451,7 @@ static NSString * const ATTACHMENT_FILENAME = @"screenshot.jpg";
         if ([self.delegate respondsToSelector:@selector(feedbackViewControllerSubmitButtonTextColor:)]) {
             mailCell.textLabel.textColor = [self.delegate feedbackViewControllerSubmitButtonTextColor:self];
         }
+        mailCell.layer.cornerRadius = 6.0;
         return mailCell;
     }
     
@@ -445,6 +461,12 @@ static NSString * const ATTACHMENT_FILENAME = @"screenshot.jpg";
     if ([self.delegate respondsToSelector:@selector(feedbackViewControllerFont:)]) {
         cellItem.font = [self.delegate feedbackViewControllerFont:self];
         
+    }
+    if ([self.delegate respondsToSelector:@selector(feedbackViewControllerCellColor:)]) {
+        cellItem.backgroundColor = [self.delegate feedbackViewControllerCellColor:self];
+    }
+    if ([self.delegate respondsToSelector:@selector(feedbackViewControllerCellTextColor:)]) {
+        cellItem.textColor = [self.delegate feedbackViewControllerCellTextColor:self];
     }
     [cellItem configureCell:cell atIndexPath:indexPath];
 
@@ -469,6 +491,29 @@ static NSString * const ATTACHMENT_FILENAME = @"screenshot.jpg";
 
 #pragma mark - Table view delegate
 
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    if (section == 1) {
+        
+        UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(15, 0, self.view.frame.size.width - 30, 22)];
+        label.backgroundColor = [UIColor clearColor];
+        label.text = @"Details";
+        if ([self.delegate respondsToSelector:@selector(feedbackViewControllerCellTextColor:)]) {
+            label.textColor = [self.delegate feedbackViewControllerCellTextColor:self];
+        }
+        if ([self.delegate respondsToSelector:@selector(feedbackViewControllerFont:)]) {
+            label.font = [self.delegate feedbackViewControllerFont:self];
+        }
+        UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 22)];
+        view.backgroundColor = [UIColor clearColor];
+        [view addSubview:label];
+        return view;
+
+    }
+    return nil;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 22;
+}
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section == [self.cellItems count]) {

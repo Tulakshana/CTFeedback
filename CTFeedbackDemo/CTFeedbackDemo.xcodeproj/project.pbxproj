@@ -31,6 +31,7 @@
 		6AEC61631821D19D00B6DB37 /* CTFeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AEC61601821D19D00B6DB37 /* CTFeedbackViewController.m */; };
 		6AEC61861821FBF800B6DB37 /* CTFeedbackLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6AEC61841821FBF800B6DB37 /* CTFeedbackLocalizable.strings */; };
 		6AEC61871821FBF800B6DB37 /* CTFeedbackLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6AEC61841821FBF800B6DB37 /* CTFeedbackLocalizable.strings */; };
+		89CA33381ABAEE89003D1C61 /* CTSecondVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 89CA33371ABAEE89003D1C61 /* CTSecondVC.m */; };
 		CB8763551861E9398CFC8428 /* CTFeedbackCellItem.m in Sources */ = {isa = PBXBuildFile; fileRef = CB876438D25C52E9455F30EB /* CTFeedbackCellItem.m */; };
 		CB876D012CED040B497A28CF /* CTFeedbackCellItem.m in Sources */ = {isa = PBXBuildFile; fileRef = CB876438D25C52E9455F30EB /* CTFeedbackCellItem.m */; };
 		CB876FE09FF1D6E4370A491A /* NSBundle+CTFeedback.m in Sources */ = {isa = PBXBuildFile; fileRef = CB876691CB3B7AC00E58896D /* NSBundle+CTFeedback.m */; };
@@ -95,6 +96,8 @@
 		6AEC61851821FBF800B6DB37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/CTFeedbackLocalizable.strings; sourceTree = "<group>"; };
 		6AEE428F189A10FB009C0138 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/CTFeedbackLocalizable.strings"; sourceTree = "<group>"; };
 		788BC1F218AF8A8E0071B37C /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/CTFeedbackLocalizable.strings; sourceTree = "<group>"; };
+		89CA33361ABAEE89003D1C61 /* CTSecondVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSecondVC.h; sourceTree = "<group>"; };
+		89CA33371ABAEE89003D1C61 /* CTSecondVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSecondVC.m; sourceTree = "<group>"; };
 		CB876438D25C52E9455F30EB /* CTFeedbackCellItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTFeedbackCellItem.m; sourceTree = "<group>"; };
 		CB876691CB3B7AC00E58896D /* NSBundle+CTFeedback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+CTFeedback.m"; sourceTree = "<group>"; };
 		CB8767F3272405CCC42F1755 /* CTFeedbackCellItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTFeedbackCellItem.h; sourceTree = "<group>"; };
@@ -175,6 +178,8 @@
 				6AEC613E1821D17600B6DB37 /* CTViewController.m */,
 				6AEC61401821D17600B6DB37 /* Images.xcassets */,
 				6AEC612C1821D17600B6DB37 /* Supporting Files */,
+				89CA33361ABAEE89003D1C61 /* CTSecondVC.h */,
+				89CA33371ABAEE89003D1C61 /* CTSecondVC.m */,
 			);
 			path = CTFeedbackDemo;
 			sourceTree = "<group>";
@@ -366,6 +371,7 @@
 				6A3F554E18222FB400217253 /* CTFeedbackCell.m in Sources */,
 				6AEC613F1821D17600B6DB37 /* CTViewController.m in Sources */,
 				CB876D012CED040B497A28CF /* CTFeedbackCellItem.m in Sources */,
+				89CA33381ABAEE89003D1C61 /* CTSecondVC.m in Sources */,
 				CB876FE09FF1D6E4370A491A /* NSBundle+CTFeedback.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

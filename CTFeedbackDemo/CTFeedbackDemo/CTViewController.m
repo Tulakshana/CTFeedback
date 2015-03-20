@@ -8,6 +8,7 @@
 
 #import "CTViewController.h"
 #import "CTFeedbackViewController.h"
+#import "CTSecondVC.h"
 
 @interface CTViewController ()<CTFeedbackViewControllerDelegate>
 
@@ -29,9 +30,7 @@
 
 - (IBAction)feedbackButtonTapped:(id)sender
 {
-    CTFeedbackViewController *feedbackViewController = [CTFeedbackViewController controllerWithTopics:CTFeedbackViewController.defaultTopics localizedTopics:CTFeedbackViewController.defaultLocalizedTopics];
-    feedbackViewController.toRecipients = @[@"ctfeedback@example.com"];
-    feedbackViewController.delegate = self;
+    CTSecondVC *feedbackViewController = [[CTSecondVC alloc]init];
     [self.navigationController pushViewController:feedbackViewController animated:YES];
 }
 
@@ -43,16 +42,5 @@
     [self presentViewController:navigationController animated:YES completion:nil];
 }
 
-#pragma mark - CTFeedbackViewControllerDelegate
 
-- (UIFont *)feedbackViewControllerFont:(CTFeedbackViewController *)controller{
-    return [UIFont systemFontOfSize:17.0];
-}
-
-- (UIColor *)feedbackViewControllerSubmitButtonColor:(CTFeedbackViewController *)controller{
-    return [UIColor redColor];
-}
-- (UIColor *)feedbackViewControllerSubmitButtonTextColor:(CTFeedbackViewController *)controller{
-    return [UIColor whiteColor];
-}
 @end
