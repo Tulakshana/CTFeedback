@@ -52,6 +52,7 @@
     }
     
     cell.layer.cornerRadius = 6.0;
+    cell.clipsToBounds = TRUE;
 }
 
 @end

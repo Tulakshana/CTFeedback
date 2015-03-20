@@ -14,6 +14,8 @@
 #import "NSBundle+CTFeedback.h"
 #import <MessageUI/MessageUI.h>
 
+#import "ActionSheetPicker.h"
+
 typedef NS_ENUM(NSInteger, CTFeedbackSection){
     CTFeedbackSectionInput = 0,
     CTFeedbackSectionScreenshot,
@@ -179,22 +181,35 @@ typedef NS_ENUM(NSInteger, CTFeedbackSection){
     self.topicCellItem = [CTFeedbackTopicCellItem new];
     self.topicCellItem.topic = self.localizedTopics[self.selectedTopicIndex];
     self.topicCellItem.action = ^(CTFeedbackViewController *sender) {
-        CTFeedbackTopicsViewController *topicsViewController = [[CTFeedbackTopicsViewController alloc] initWithStyle:UITableViewStyleGrouped];
-        topicsViewController.topics = sender.topics;
-        topicsViewController.localizedTopics = sender.localizedTopics;
-        if ([weakSelf.delegate respondsToSelector:@selector(feedbackViewControllerFont:)]) {
-            topicsViewController.font = [weakSelf.delegate feedbackViewControllerFont:weakSelf];
-            
-        }
-        topicsViewController.action = ^(NSString *selectedTopic) {
-            weakSelf.selectedTopic = selectedTopic;
+//        CTFeedbackTopicsViewController *topicsViewController = [[CTFeedbackTopicsViewController alloc] initWithStyle:UITableViewStyleGrouped];
+//        topicsViewController.topics = sender.topics;
+//        topicsViewController.localizedTopics = sender.localizedTopics;
+//        if ([weakSelf.delegate respondsToSelector:@selector(feedbackViewControllerFont:)]) {
+//            topicsViewController.font = [weakSelf.delegate feedbackViewControllerFont:weakSelf];
+//            
+//        }
+//        topicsViewController.action = ^(NSString *selectedTopic) {
+//            weakSelf.selectedTopic = selectedTopic;
+//            NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:CTFeedbackSectionInput];
+//            CTFeedbackTopicCellItem *cellItem = weakSelf.cellItems[(NSUInteger)indexPath.section][(NSUInteger)indexPath.row];
+//            cellItem.topic = weakSelf.localizedTopics[weakSelf.selectedTopicIndex];
+//            [weakSelf.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+//        };
+//
+//        [sender.navigationController pushViewController:topicsViewController animated:YES];
+        ActionStringDoneBlock done = ^(ActionSheetStringPicker *picker, NSInteger selectedIndex, id selectedValue) {
+            weakSelf.selectedTopic = [weakSelf.topics objectAtIndex:selectedIndex];
             NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:CTFeedbackSectionInput];
             CTFeedbackTopicCellItem *cellItem = weakSelf.cellItems[(NSUInteger)indexPath.section][(NSUInteger)indexPath.row];
             cellItem.topic = weakSelf.localizedTopics[weakSelf.selectedTopicIndex];
             [weakSelf.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-        };
 
-        [sender.navigationController pushViewController:topicsViewController animated:YES];
+        };
+        ActionStringCancelBlock cancel = ^(ActionSheetStringPicker *picker) {
+            NSLog(@"Block Picker Canceled");
+        };
+        
+        [ActionSheetStringPicker showPickerWithTitle:@"" rows:weakSelf.localizedTopics initialSelection:weakSelf.selectedTopicIndex doneBlock:done cancelBlock:cancel origin:weakSelf.view];
     };
     [result addObject:self.topicCellItem];
 
@@ -454,6 +469,7 @@ static NSString * const ATTACHMENT_FILENAME = @"screenshot.jpg";
             mailCell.textLabel.textColor = [self.delegate feedbackViewControllerSubmitButtonTextColor:self];
         }
         mailCell.layer.cornerRadius = 6.0;
+        mailCell.clipsToBounds = TRUE;
         return mailCell;
     }
     
