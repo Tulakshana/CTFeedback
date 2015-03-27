@@ -53,6 +53,10 @@
     
     cell.layer.cornerRadius = 6.0;
     cell.clipsToBounds = TRUE;
+    cell.layer.shadowOffset = CGSizeMake(0.0, 1.0);
+    cell.layer.shadowRadius = 1.0;
+    cell.layer.shadowOpacity = 0.6;
+    cell.layer.masksToBounds = NO;
 }
 
 @end

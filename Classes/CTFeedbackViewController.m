@@ -470,6 +470,10 @@ static NSString * const ATTACHMENT_FILENAME = @"screenshot.jpg";
         }
         mailCell.layer.cornerRadius = 6.0;
         mailCell.clipsToBounds = TRUE;
+        mailCell.layer.shadowOffset = CGSizeMake(0.0, 1.0);
+        mailCell.layer.shadowRadius = 1.0;
+        mailCell.layer.shadowOpacity = 0.6;
+        mailCell.layer.masksToBounds = NO;
         return mailCell;
     }
     
