@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		113F35D71211C1283E6F5999 /* libPods-CTFeedbackDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A69C1E0CB3782999445DE23E /* libPods-CTFeedbackDemo.a */; };
 		6A3F554E18222FB400217253 /* CTFeedbackCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A3F554D18222FB400217253 /* CTFeedbackCell.m */; };
 		6A3F554F18222FB400217253 /* CTFeedbackCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A3F554D18222FB400217253 /* CTFeedbackCell.m */; };
 		6A3F55521823243300217253 /* CTFeedbackTopicsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A3F55511823243300217253 /* CTFeedbackTopicsViewController.m */; };
@@ -32,8 +31,15 @@
 		6AEC61631821D19D00B6DB37 /* CTFeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AEC61601821D19D00B6DB37 /* CTFeedbackViewController.m */; };
 		6AEC61861821FBF800B6DB37 /* CTFeedbackLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6AEC61841821FBF800B6DB37 /* CTFeedbackLocalizable.strings */; };
 		6AEC61871821FBF800B6DB37 /* CTFeedbackLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6AEC61841821FBF800B6DB37 /* CTFeedbackLocalizable.strings */; };
+		89C7A2481ABC259400EFE05A /* AbstractActionSheetPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 89C7A2371ABC259400EFE05A /* AbstractActionSheetPicker.m */; };
+		89C7A2491ABC259400EFE05A /* ActionSheetCustomPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 89C7A2391ABC259400EFE05A /* ActionSheetCustomPicker.m */; };
+		89C7A24A1ABC259400EFE05A /* ActionSheetDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 89C7A23C1ABC259400EFE05A /* ActionSheetDatePicker.m */; };
+		89C7A24B1ABC259400EFE05A /* ActionSheetDistancePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 89C7A23E1ABC259400EFE05A /* ActionSheetDistancePicker.m */; };
+		89C7A24C1ABC259400EFE05A /* ActionSheetLocalePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 89C7A2401ABC259400EFE05A /* ActionSheetLocalePicker.m */; };
+		89C7A24D1ABC259400EFE05A /* ActionSheetStringPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 89C7A2431ABC259400EFE05A /* ActionSheetStringPicker.m */; };
+		89C7A24E1ABC259400EFE05A /* DistancePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 89C7A2451ABC259400EFE05A /* DistancePickerView.m */; };
+		89C7A24F1ABC259400EFE05A /* SWActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 89C7A2471ABC259400EFE05A /* SWActionSheet.m */; };
 		89CA33381ABAEE89003D1C61 /* CTSecondVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 89CA33371ABAEE89003D1C61 /* CTSecondVC.m */; };
-		A8E8C054578A46B07236F087 /* libPods-CTFeedbackDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F2079E568B0FAA5A88D25E3 /* libPods-CTFeedbackDemoTests.a */; };
 		CB8763551861E9398CFC8428 /* CTFeedbackCellItem.m in Sources */ = {isa = PBXBuildFile; fileRef = CB876438D25C52E9455F30EB /* CTFeedbackCellItem.m */; };
 		CB876D012CED040B497A28CF /* CTFeedbackCellItem.m in Sources */ = {isa = PBXBuildFile; fileRef = CB876438D25C52E9455F30EB /* CTFeedbackCellItem.m */; };
 		CB876FE09FF1D6E4370A491A /* NSBundle+CTFeedback.m in Sources */ = {isa = PBXBuildFile; fileRef = CB876691CB3B7AC00E58896D /* NSBundle+CTFeedback.m */; };
@@ -97,15 +103,27 @@
 		6AEC61651821D7DD00B6DB37 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		6AEC61851821FBF800B6DB37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/CTFeedbackLocalizable.strings; sourceTree = "<group>"; };
 		6AEE428F189A10FB009C0138 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/CTFeedbackLocalizable.strings"; sourceTree = "<group>"; };
-		72D454B20443EA7EA0F27016 /* Pods-CTFeedbackDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CTFeedbackDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CTFeedbackDemoTests/Pods-CTFeedbackDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		788BC1F218AF8A8E0071B37C /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/CTFeedbackLocalizable.strings; sourceTree = "<group>"; };
-		820762B1AF62A47236A4228B /* Pods-CTFeedbackDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CTFeedbackDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CTFeedbackDemo/Pods-CTFeedbackDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		89C7A2361ABC259400EFE05A /* AbstractActionSheetPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractActionSheetPicker.h; sourceTree = "<group>"; };
+		89C7A2371ABC259400EFE05A /* AbstractActionSheetPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbstractActionSheetPicker.m; sourceTree = "<group>"; };
+		89C7A2381ABC259400EFE05A /* ActionSheetCustomPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetCustomPicker.h; sourceTree = "<group>"; };
+		89C7A2391ABC259400EFE05A /* ActionSheetCustomPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionSheetCustomPicker.m; sourceTree = "<group>"; };
+		89C7A23A1ABC259400EFE05A /* ActionSheetCustomPickerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetCustomPickerDelegate.h; sourceTree = "<group>"; };
+		89C7A23B1ABC259400EFE05A /* ActionSheetDatePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetDatePicker.h; sourceTree = "<group>"; };
+		89C7A23C1ABC259400EFE05A /* ActionSheetDatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionSheetDatePicker.m; sourceTree = "<group>"; };
+		89C7A23D1ABC259400EFE05A /* ActionSheetDistancePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetDistancePicker.h; sourceTree = "<group>"; };
+		89C7A23E1ABC259400EFE05A /* ActionSheetDistancePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionSheetDistancePicker.m; sourceTree = "<group>"; };
+		89C7A23F1ABC259400EFE05A /* ActionSheetLocalePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetLocalePicker.h; sourceTree = "<group>"; };
+		89C7A2401ABC259400EFE05A /* ActionSheetLocalePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionSheetLocalePicker.m; sourceTree = "<group>"; };
+		89C7A2411ABC259400EFE05A /* ActionSheetPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetPicker.h; sourceTree = "<group>"; };
+		89C7A2421ABC259400EFE05A /* ActionSheetStringPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetStringPicker.h; sourceTree = "<group>"; };
+		89C7A2431ABC259400EFE05A /* ActionSheetStringPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionSheetStringPicker.m; sourceTree = "<group>"; };
+		89C7A2441ABC259400EFE05A /* DistancePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DistancePickerView.h; sourceTree = "<group>"; };
+		89C7A2451ABC259400EFE05A /* DistancePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DistancePickerView.m; sourceTree = "<group>"; };
+		89C7A2461ABC259400EFE05A /* SWActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWActionSheet.h; sourceTree = "<group>"; };
+		89C7A2471ABC259400EFE05A /* SWActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWActionSheet.m; sourceTree = "<group>"; };
 		89CA33361ABAEE89003D1C61 /* CTSecondVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSecondVC.h; sourceTree = "<group>"; };
 		89CA33371ABAEE89003D1C61 /* CTSecondVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTSecondVC.m; sourceTree = "<group>"; };
-		908AFA8501FE6ADC4862E2AF /* Pods-CTFeedbackDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CTFeedbackDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CTFeedbackDemoTests/Pods-CTFeedbackDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
-		9F2079E568B0FAA5A88D25E3 /* libPods-CTFeedbackDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CTFeedbackDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A69C1E0CB3782999445DE23E /* libPods-CTFeedbackDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CTFeedbackDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		AB28B80D701F296A0846E607 /* Pods-CTFeedbackDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CTFeedbackDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-CTFeedbackDemo/Pods-CTFeedbackDemo.release.xcconfig"; sourceTree = "<group>"; };
 		CB876438D25C52E9455F30EB /* CTFeedbackCellItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTFeedbackCellItem.m; sourceTree = "<group>"; };
 		CB876691CB3B7AC00E58896D /* NSBundle+CTFeedback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+CTFeedback.m"; sourceTree = "<group>"; };
 		CB8767F3272405CCC42F1755 /* CTFeedbackCellItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTFeedbackCellItem.h; sourceTree = "<group>"; };
@@ -126,7 +144,6 @@
 				6AEC61281821D17600B6DB37 /* CoreGraphics.framework in Frameworks */,
 				6AEC612A1821D17600B6DB37 /* UIKit.framework in Frameworks */,
 				6AEC61261821D17600B6DB37 /* Foundation.framework in Frameworks */,
-				113F35D71211C1283E6F5999 /* libPods-CTFeedbackDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,24 +154,12 @@
 				6AEC61481821D17600B6DB37 /* XCTest.framework in Frameworks */,
 				6AEC614A1821D17600B6DB37 /* UIKit.framework in Frameworks */,
 				6AEC61491821D17600B6DB37 /* Foundation.framework in Frameworks */,
-				A8E8C054578A46B07236F087 /* libPods-CTFeedbackDemoTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5E7EFB5EBD3CEA117110B219 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				820762B1AF62A47236A4228B /* Pods-CTFeedbackDemo.debug.xcconfig */,
-				AB28B80D701F296A0846E607 /* Pods-CTFeedbackDemo.release.xcconfig */,
-				908AFA8501FE6ADC4862E2AF /* Pods-CTFeedbackDemoTests.debug.xcconfig */,
-				72D454B20443EA7EA0F27016 /* Pods-CTFeedbackDemoTests.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		6AEC61191821D17600B6DB37 = {
 			isa = PBXGroup;
 			children = (
@@ -164,7 +169,6 @@
 				6AEC614D1821D17600B6DB37 /* CTFeedbackDemoTests */,
 				6AEC61241821D17600B6DB37 /* Frameworks */,
 				6AEC61231821D17600B6DB37 /* Products */,
-				5E7EFB5EBD3CEA117110B219 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -185,8 +189,6 @@
 				6AEC61271821D17600B6DB37 /* CoreGraphics.framework */,
 				6AEC61291821D17600B6DB37 /* UIKit.framework */,
 				6AEC61471821D17600B6DB37 /* XCTest.framework */,
-				A69C1E0CB3782999445DE23E /* libPods-CTFeedbackDemo.a */,
-				9F2079E568B0FAA5A88D25E3 /* libPods-CTFeedbackDemoTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -251,6 +253,7 @@
 		6AEC615E1821D19D00B6DB37 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				89C7A2351ABC259400EFE05A /* Pickers */,
 				6AEC615F1821D19D00B6DB37 /* CTFeedbackViewController.h */,
 				6AEC61601821D19D00B6DB37 /* CTFeedbackViewController.m */,
 				6A3F554C18222FB400217253 /* CTFeedbackCell.h */,
@@ -276,6 +279,31 @@
 			path = ../Resources;
 			sourceTree = "<group>";
 		};
+		89C7A2351ABC259400EFE05A /* Pickers */ = {
+			isa = PBXGroup;
+			children = (
+				89C7A2361ABC259400EFE05A /* AbstractActionSheetPicker.h */,
+				89C7A2371ABC259400EFE05A /* AbstractActionSheetPicker.m */,
+				89C7A2381ABC259400EFE05A /* ActionSheetCustomPicker.h */,
+				89C7A2391ABC259400EFE05A /* ActionSheetCustomPicker.m */,
+				89C7A23A1ABC259400EFE05A /* ActionSheetCustomPickerDelegate.h */,
+				89C7A23B1ABC259400EFE05A /* ActionSheetDatePicker.h */,
+				89C7A23C1ABC259400EFE05A /* ActionSheetDatePicker.m */,
+				89C7A23D1ABC259400EFE05A /* ActionSheetDistancePicker.h */,
+				89C7A23E1ABC259400EFE05A /* ActionSheetDistancePicker.m */,
+				89C7A23F1ABC259400EFE05A /* ActionSheetLocalePicker.h */,
+				89C7A2401ABC259400EFE05A /* ActionSheetLocalePicker.m */,
+				89C7A2411ABC259400EFE05A /* ActionSheetPicker.h */,
+				89C7A2421ABC259400EFE05A /* ActionSheetStringPicker.h */,
+				89C7A2431ABC259400EFE05A /* ActionSheetStringPicker.m */,
+				89C7A2441ABC259400EFE05A /* DistancePickerView.h */,
+				89C7A2451ABC259400EFE05A /* DistancePickerView.m */,
+				89C7A2461ABC259400EFE05A /* SWActionSheet.h */,
+				89C7A2471ABC259400EFE05A /* SWActionSheet.m */,
+			);
+			path = Pickers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -283,11 +311,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6AEC61571821D17600B6DB37 /* Build configuration list for PBXNativeTarget "CTFeedbackDemo" */;
 			buildPhases = (
-				4B2A98BCD31AAB553B4DB10F /* Check Pods Manifest.lock */,
 				6AEC611E1821D17600B6DB37 /* Sources */,
 				6AEC611F1821D17600B6DB37 /* Frameworks */,
 				6AEC61201821D17600B6DB37 /* Resources */,
-				F5E379E70AA427762A694D85 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -302,11 +328,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6AEC615A1821D17600B6DB37 /* Build configuration list for PBXNativeTarget "CTFeedbackDemoTests" */;
 			buildPhases = (
-				E088D0D3D820C327029FCC4A /* Check Pods Manifest.lock */,
 				6AEC61421821D17600B6DB37 /* Sources */,
 				6AEC61431821D17600B6DB37 /* Frameworks */,
 				6AEC61441821D17600B6DB37 /* Resources */,
-				B0D49034D77248DD2248B2E1 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -387,82 +411,27 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		4B2A98BCD31AAB553B4DB10F /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		B0D49034D77248DD2248B2E1 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CTFeedbackDemoTests/Pods-CTFeedbackDemoTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E088D0D3D820C327029FCC4A /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		F5E379E70AA427762A694D85 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CTFeedbackDemo/Pods-CTFeedbackDemo-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		6AEC611E1821D17600B6DB37 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				6AEC61621821D19D00B6DB37 /* CTFeedbackViewController.m in Sources */,
+				89C7A2481ABC259400EFE05A /* AbstractActionSheetPicker.m in Sources */,
+				89C7A2491ABC259400EFE05A /* ActionSheetCustomPicker.m in Sources */,
+				89C7A24F1ABC259400EFE05A /* SWActionSheet.m in Sources */,
+				89C7A24E1ABC259400EFE05A /* DistancePickerView.m in Sources */,
 				6AEC61321821D17600B6DB37 /* main.m in Sources */,
 				6AEC61361821D17600B6DB37 /* CTAppDelegate.m in Sources */,
+				89C7A24C1ABC259400EFE05A /* ActionSheetLocalePicker.m in Sources */,
+				89C7A24D1ABC259400EFE05A /* ActionSheetStringPicker.m in Sources */,
 				6A3F55521823243300217253 /* CTFeedbackTopicsViewController.m in Sources */,
 				6A3F554E18222FB400217253 /* CTFeedbackCell.m in Sources */,
 				6AEC613F1821D17600B6DB37 /* CTViewController.m in Sources */,
 				CB876D012CED040B497A28CF /* CTFeedbackCellItem.m in Sources */,
+				89C7A24A1ABC259400EFE05A /* ActionSheetDatePicker.m in Sources */,
 				89CA33381ABAEE89003D1C61 /* CTSecondVC.m in Sources */,
+				89C7A24B1ABC259400EFE05A /* ActionSheetDistancePicker.m in Sources */,
 				CB876FE09FF1D6E4370A491A /* NSBundle+CTFeedback.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -629,7 +598,6 @@
 		};
 		6AEC61581821D17600B6DB37 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 820762B1AF62A47236A4228B /* Pods-CTFeedbackDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -643,7 +611,6 @@
 		};
 		6AEC61591821D17600B6DB37 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AB28B80D701F296A0846E607 /* Pods-CTFeedbackDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -657,7 +624,6 @@
 		};
 		6AEC615B1821D17600B6DB37 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 908AFA8501FE6ADC4862E2AF /* Pods-CTFeedbackDemoTests.debug.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CTFeedbackDemo.app/CTFeedbackDemo";
@@ -681,7 +647,6 @@
 		};
 		6AEC615C1821D17600B6DB37 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 72D454B20443EA7EA0F27016 /* Pods-CTFeedbackDemoTests.release.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CTFeedbackDemo.app/CTFeedbackDemo";
