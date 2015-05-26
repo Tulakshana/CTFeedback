@@ -1,0 +1,15 @@
+# Uncomment this line to define a global platform for your project
+# platform :ios, '6.0'
+
+target 'CTFeedbackDemo' do
+
+pod 'ActionSheetPicker-3.0', :git => 'https://github.com/Tulakshana/ActionSheetPicker-3.0.git'
+
+end
+
+target 'CTFeedbackDemoTests' do
+
+pod 'ActionSheetPicker-3.0', :git => 'https://github.com/Tulakshana/ActionSheetPicker-3.0.git'
+
+end
+
