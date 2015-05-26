@@ -11,4 +11,5 @@ Pod::Spec.new do |s|
   s.resource_bundles = { 'CTFeedback' => ['Resources/*.lproj', 'Resources/PlatformNames.plist'] }
   s.framework  = 'MessageUI'
   s.requires_arc = true
+  s.dependency 'ActionSheetPicker-3.0', :git => 'https://github.com/Tulakshana/ActionSheetPicker-3.0.git'
 end
