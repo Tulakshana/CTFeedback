@@ -18,9 +18,9 @@
 
 typedef NS_ENUM(NSInteger, CTFeedbackSection){
     CTFeedbackSectionInput = 0,
-    CTFeedbackSectionScreenshot,
-    CTFeedbackSectionDeviceInfo,
-    CTFeedbackSectionAppInfo
+    CTFeedbackSectionScreenshot = 2,
+//    CTFeedbackSectionDeviceInfo,
+//    CTFeedbackSectionAppInfo
 };
 
 @interface CTFeedbackViewController ()<UIImagePickerControllerDelegate,UIActionSheetDelegate,UINavigationControllerDelegate>
